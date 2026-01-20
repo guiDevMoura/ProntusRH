@@ -1,0 +1,72 @@
+.benefits {
+  padding: var(--spacing-lg) 0;
+  background-color: var(--color-accent-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Título */
+.benefits .h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Grid fluido */
+.benefits__grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+/* Item */
+.benefits__grid > div {
+  position: relative;
+  padding-left: 1rem;
+}
+
+/* Linha lateral sutil */
+.benefits__grid > div::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  width: 3px;
+  height: 60%;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+/* Título do benefício */
+.benefits__grid h3 {
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-primary);
+}
+
+/* Texto */
+.benefits__grid p {
+  color: var(--color-muted);
+  line-height: var(--line-height-base);
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 900px) {
+  .benefits__grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
+.benefits::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 180px;
+  background-color: rgba(47, 27, 58, 0.06);
+  border-radius: 50%;
+}

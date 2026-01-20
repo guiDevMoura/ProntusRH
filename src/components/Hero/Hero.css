@@ -1,0 +1,51 @@
+.hero {
+  background-color: var(--color-accent-soft);
+  padding-top: calc(var(--spacing-lg) + 80px);
+  padding-bottom: var(--spacing-lg);
+}
+
+.hero__content {
+  max-width: 860px;
+  text-align: center;
+}
+
+/* Subtítulo */
+.hero__subtitle {
+  margin-top: var(--spacing-sm);
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+}
+
+/* Frase de destaque */
+.hero__highlight {
+  margin: var(--spacing-md) auto;
+  max-width: 700px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-muted);
+}
+
+/* CTA */
+.hero__cta {
+  margin-top: var(--spacing-sm);
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: calc(var(--spacing-md) + 80px);
+    padding-bottom: var(--spacing-md);
+  }
+
+  .hero__content {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .hero__subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .hero__cta {
+    width: 100%;
+    max-width: 320px;
+  }
+}

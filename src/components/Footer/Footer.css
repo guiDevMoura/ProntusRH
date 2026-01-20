@@ -1,0 +1,64 @@
+.footer {
+  background-color: var(--color-bg-dark);
+  padding: var(--spacing-lg) 0 var(--spacing-md);
+  color: #f5fbff;
+  font-size: var(--font-size-sm);
+}
+
+/* Container central */
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Logo */
+.footer__logo {
+  height: 42px;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Frase institucional */
+.footer__tagline {
+  max-width: 420px;
+  margin-bottom: var(--spacing-md);
+  color: #e6f4ff;
+  line-height: 1.6;
+}
+
+/* Contatos */
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Link de contato */
+.footer__contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-sm);
+  color: #e6f4ff;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.footer__contact img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Hover */
+.footer__contact:hover {
+  background-color: rgba(199, 230, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Copyright */
+.footer__copyright {
+  color: #c7e6ff;
+}
