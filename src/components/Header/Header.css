@@ -20,33 +20,25 @@
 /* Logo */
 .header__logo {
   height: 36px;
-  transition: opacity 0.3s ease;
 }
 
-/* Ações */
+/* Actions */
 .header__actions {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-
+  gap: 1rem;
 }
 
-/* Navegação */
+/* Desktop nav */
 .header__nav {
   display: flex;
   gap: 1.5rem;
-  align-items: center;
 }
 
 .header__nav a {
   text-decoration: none;
   color: var(--color-text);
   font-weight: var(--font-weight-medium);
-  transition: color 0.2s ease;
-}
-
-.header__nav a:hover {
-  color: var(--color-primary);
 }
 
 /* ===== Theme Toggle ===== */
@@ -55,50 +47,116 @@
   background: none;
   border: none;
   cursor: pointer;
-  margin-left: 1rem;
-  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
+/* Trilho */
 .toggle-track {
-  width: 46px;
-  height: 26px;
+  width: 44px;
+  height: 24px;
   background-color: var(--color-bg-soft);
   border-radius: 999px;
   position: relative;
-  transition: background-color 0.3s ease;
 }
 
+/* Thumb */
 .toggle-thumb {
-  width: 20px;
-  height: 20px;
-  background-color: var(--color-bg-soft);
+  width: 40px;   /* mantém 50% da altura do header */
+  height: 40px;
+  background-color: transparent;
   border-radius: 50%;
-  top: 3px;
-  left: 3px;
+
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  transform: translateY(-50%);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 2rem;
-  line-height: 1;
-
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
-/* Dark ativo */
-.theme-toggle.dark .toggle-track {
-  background-color: var(--color-primary);
+/* Ícone menor e proporcional */
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
+/* Dark ativo → move para direita */
 .theme-toggle.dark .toggle-thumb {
-  transform: translateX(20px);
-  background-color: var(--color-bg);
+  transform: translate(28px, -50%);
 }
 
-/* ===== Mobile ===== */
+/* Botão menu mobile */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+/* ===== Mobile Menu ===== */
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+
+  background-color: var(--color-bg);
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
+
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+
+  padding: 2rem 1.5rem;
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-menu__close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobile-menu__nav a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+/* ===== Mobile Breakpoint ===== */
 @media (max-width: 768px) {
-  .header__nav {
+  .header__nav,
+  .btn-primary {
     display: none;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 }
